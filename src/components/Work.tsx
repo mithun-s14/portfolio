@@ -1,0 +1,112 @@
+'use client';
+
+import { useRef, useEffect } from 'react';
+
+const EXPERIENCES = [
+  {
+    index: '01',
+    role: 'Software Developer Co-op',
+    company: 'Environment and Climate Change Canada',
+    location: 'Toronto, ON',
+    period: 'May 2025 – Dec 2025',
+    summary: 'Shipped features and improved data integrity on a national reporting platform serving 3,500+ users.',
+    highlights: [
+      'Delivered 15+ features (facility transfer workflows, bulk import tools, automated notifications) on a C#/.NET 8 platform used across Canada.',
+      'Wrote MS SQL stored procedures that identified and cleaned 4,000+ corrupted records, improving data integrity by 95% and saving 18+ hrs/week of manual validation.',
+      'Grew test coverage from 65% to 85% through 50+ code reviews and targeted unit tests; resolved 20+ production incidents via root-cause analysis and regression gates.',
+      'Led frontend work across 10+ XML-based reporting interfaces, cutting invalid submission rates by 30% through improved form validation.',
+    ],
+    tags: ['C#', '.NET 8', 'Entity Framework', 'MS SQL', 'Azure DevOps', 'XML'],
+  },
+  {
+    index: '02',
+    role: 'Software Developer Co-op',
+    company: 'Ontario Treasury Board Secretariat',
+    location: 'Toronto, ON',
+    period: 'Jan 2024 – Sep 2024',
+    summary: 'Built full-stack features and automation tools for legacy Ministry applications used by 500+ employees.',
+    highlights: [
+      'Shipped 20+ full-stack features across 2 legacy web apps, adding custom JS validation and REST API integrations that standardised data entry and cut downstream processing errors.',
+      'Automated SharePoint procurement data sync via cloud REST pipelines, eliminating 8 hrs/week of manual Excel exports and delivering same-day financial records to finance teams.',
+      'Built 5 Power BI dashboards tracking budget allocation and expenditure, adopted by 2 financial teams and significantly reducing ad-hoc reporting requests.',
+      'Established a smoke/unit/regression testing framework achieving 90% coverage, resulting in a 40% drop in production bugs; mentored 4 new hires, cutting ramp-up time by 50%.',
+    ],
+    tags: ['JavaScript', 'HTML & CSS', 'SQL', 'Power BI', 'REST APIs', 'Azure DevOps'],
+  },
+];
+
+export default function Work() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-entered');
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="work" ref={sectionRef} className="px-8 py-24 sm:px-20">
+      {/* Section label */}
+      <div className="mb-16 flex items-center gap-6">
+        <span className="text-xs font-medium uppercase tracking-[0.2em] text-gray-400">Experience</span>
+        <div className="h-px flex-1 bg-gray-200" />
+      </div>
+
+      <div>
+        {EXPERIENCES.map((exp, i) => (
+          <div
+            key={exp.index}
+            className="reveal-item border-t border-gray-200 py-10 last:border-b"
+            style={{ transitionDelay: `${i * 120}ms` }}
+          >
+            <div className="flex flex-col gap-6 sm:flex-row sm:gap-12">
+              {/* Index */}
+              <span className="pt-1 text-xs font-light text-gray-400 sm:w-8">{exp.index}</span>
+
+              {/* Content */}
+              <div className="flex-1">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h3 className="text-xl font-semibold sm:text-2xl">{exp.role}</h3>
+                  <span className="text-sm font-light text-gray-500">{exp.period}</span>
+                </div>
+                <p className="mt-1 text-sm font-medium text-gray-500">
+                  {exp.company} · {exp.location}
+                </p>
+                <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed">
+                  {exp.summary}
+                </p>
+                <ul className="mt-3 max-w-2xl space-y-1.5">
+                  {exp.highlights.map((point, j) => (
+                    <li key={j} className="flex gap-2 text-sm leading-relaxed text-gray-600">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {exp.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
