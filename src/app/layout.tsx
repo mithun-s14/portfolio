@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Mithun Sivapathasundram",
   description:
     "Creative Builder · Software Engineer · Computer Science Student. Code, systems & craft.",
+  icons: {
+    icon: "/portfolio/patrick.png",
+  },
 };
 
 export default function RootLayout({
