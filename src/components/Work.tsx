@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react';
 const EXPERIENCES = [
   {
     index: '01',
-    role: 'Software Developer Co-op',
+    role: 'Software Engineer Intern',
     company: 'Environment and Climate Change Canada',
     location: 'Toronto, ON',
     period: 'May 2025 – Dec 2025',
@@ -20,7 +20,7 @@ const EXPERIENCES = [
   },
   {
     index: '02',
-    role: 'Software Developer Co-op',
+    role: 'Software Engineer Intern',
     company: 'Ontario Treasury Board Secretariat',
     location: 'Toronto, ON',
     period: 'Jan 2024 – Sep 2024',
