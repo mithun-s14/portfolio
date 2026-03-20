@@ -9,7 +9,7 @@ const EXPERIENCES = [
     company: 'Environment and Climate Change Canada',
     location: 'Toronto, ON',
     period: 'May 2025 – Dec 2025',
-    summary: 'Shipped features and improved data integrity on a national reporting platform serving 3,500+ users.',
+    summary: 'Shipped features and improved data integrity on a national reporting platform serving 12,000+ users.',
     highlights: [
       'Delivered 15+ features (facility transfer workflows, bulk import tools, automated notifications) on a C#/.NET 8 platform used across Canada.',
       'Wrote MS SQL stored procedures that identified and cleaned 4,000+ corrupted records, improving data integrity by 95% and saving 18+ hrs/week of manual validation.',
