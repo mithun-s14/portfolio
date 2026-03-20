@@ -33,7 +33,7 @@ export default function NameSection() {
             flex={true}
             weight={true}
             width={true}
-            italic={true}
+            italic={false}
             scale={false}
             textColor="#000000"
             minFontSize={48}
@@ -46,7 +46,7 @@ export default function NameSection() {
             flex={true}
             weight={true}
             width={true}
-            italic={true}
+            italic={false}
             scale={false}
             textColor="#000000"
             minFontSize={24}
