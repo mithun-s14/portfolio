@@ -8,13 +8,21 @@ const SKILL_CATEGORIES = [
     skills: ['Python', 'Java', 'TypeScript', 'JavaScript', 'C#', 'SQL', 'Bash', 'HTML', 'CSS'],
   },
   {
-    label: 'Frameworks & Libraries',
-    skills: ['React', 'Next.js', 'Tailwind CSS', '.NET 8', 'pandas', 'scikit-learn', 'Requests', 'Selenium', 'pytest'],
+    label: 'Frameworks/Libraries',
+    skills: ['React.js', 'Next.js', '.NET 8', 'Entity Framework', 'Flask', 'Tailwind CSS', 'pandas', 'scikit-learn', 'Requests', 'Selenium'],
   },
   {
-    label: 'Databases & Tools',
-    skills: ['Supabase (PostgreSQL)', 'MS SQL', 'MongoDB', 'Git', 'Docker', 'Azure DevOps', 'Vercel', 'Figma', 'Power BI'],
+    label: 'Databases & Cloud',
+    skills: ['PostgreSQL', 'MongoDB', 'Supabase', 'Docker','Azure', 'Hugging Face Spaces', 'Vercel'],
   },
+  {
+    label: 'Tools & Workflows',
+    skills: ['Git', 'GitHub Actions', 'CI/CD', 'Test-Driven Development', 'Agile Methodologies', 'REST APIs', 'MLOps'],
+  },
+  {
+    label: 'Testing',
+    skills: ['Vitest', 'React Testing Library', 'Playwright', 'pytest'],
+  }
 ];
 
 export default function Skills() {

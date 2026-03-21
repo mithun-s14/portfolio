@@ -9,8 +9,8 @@ const PROJECTS = [
     year: '2026',
     summary: 'Full-stack sports analytics platform with a real-time AI coaching chatbot.',
     highlights: [
-      '5 pages, 3 REST API routes, and 60+ TypeScript/React components integrating 3 external APIs for personalized insights.',
-      'Real-time AI chatbot via Google Gemini 2.5 Flash with server-sent streaming — each user\'s roster injected as context into the system prompt.',
+      'Shipped a full-stack fantasy basketball platform with live stats, matchup analysis, and AI-powered roster recommendations, deployed on Vercel and serving real-time analytics to active users',
+      'Engineered a real-time AI coaching chatbot using Google Gemini 2.5 Flash with server-sent streaming, dynamically injecting each user’s personal roster as context into the system prompt for personalized, scalable recommendations',
       'End-to-end auth with Supabase (JWT sessions, row-level security) and protected routes via Next.js middleware.',
       '92% statement coverage across unit, component, and E2E test suites using Vitest, React Testing Library, and Playwright.',
     ],
