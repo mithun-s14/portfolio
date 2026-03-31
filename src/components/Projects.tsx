@@ -14,7 +14,7 @@ const PROJECTS = [
       'End-to-end auth with Supabase (JWT sessions, row-level security) and protected routes via Next.js middleware.',
       '92% statement coverage across unit, component, and E2E test suites using Vitest, React Testing Library, and Playwright.',
     ],
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'Google Gemini API', 'Vitest', 'Playwright', 'React Testing Library'],
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Google Gemini API', 'Vitest', 'Playwright', 'React Testing Library', 'Redis'],
     github: 'https://github.com/mithun-s14/Fantasy-Basketball-Companion',
     live: 'https://fantasy-basketball-companion.vercel.app/',
   },
