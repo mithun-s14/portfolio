@@ -9,7 +9,7 @@ const SKILL_CATEGORIES = [
   },
   {
     label: 'Frameworks/Libraries',
-    skills: ['React.js', 'Next.js', '.NET 8', 'Entity Framework', 'Flask', 'Tailwind CSS', 'pandas', 'scikit-learn', 'Requests', 'Selenium', 'Redis'],
+    skills: ['React.js', 'Next.js', '.NET 8', 'Entity Framework', 'Flask', 'Tailwind CSS', 'pandas', 'scikit-learn', 'Requests', 'Selenium', 'Redis', 'LangChain'],
   },
   {
     label: 'Databases & Cloud',
