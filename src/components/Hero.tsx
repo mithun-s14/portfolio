@@ -45,7 +45,7 @@ export default function Hero() {
           </div>
 
           {/* MetaBalls aligned to the right */}
-          <div className="hidden sm:block" style={{ width: '300px', height: '300px', marginTop: '-80px' }}>
+          <div className="hidden sm:block" style={{ width: '380px', height: '300px', marginTop: '-80px' }}>
             <MetaBalls
               color="#ffffff"
               cursorBallColor="#ffffff"
