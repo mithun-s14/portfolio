@@ -8,7 +8,7 @@ import About from '@/components/About';
 import Work from '@/components/Work';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
-import Hero from '@/components/Hero';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [cursorColor, setCursorColor] = useState('#3b82f6');
@@ -59,7 +59,7 @@ export default function Home() {
         <Work />
         <Projects />
         <Skills />
-        <Hero />
+        <Footer />
       </div>
     </>
   );

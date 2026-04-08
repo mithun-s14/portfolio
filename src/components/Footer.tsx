@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import MetaBalls from './MetaBalls';
 
-export default function Hero() {
+export default function Footer() {
   const [time, setTime] = useState('');
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero-enter relative flex min-h-screen flex-col items-center justify-between bg-foreground p-6 pt-32 text-white sm:justify-center">
+    <div id="footer" className="hero-enter relative flex min-h-screen flex-col items-center justify-between bg-foreground p-6 pt-32 text-white sm:justify-center">
       <div className="w-full bg-foreground pt-[150px] sm:max-w-[1800px]">
         {/* Profile avatar + headline + MetaBalls */}
         <div className="relative flex items-start justify-between sm:mx-[100px]">
