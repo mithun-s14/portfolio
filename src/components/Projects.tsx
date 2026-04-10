@@ -176,7 +176,7 @@ export default function Projects() {
             </div>
 
             {/* Slide-up overlay — reveals highlights + links on hover */}
-            <div className="absolute inset-0 z-20 flex translate-y-full flex-col justify-end bg-white p-7 transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+            <div className="absolute inset-0 z-20 flex translate-y-full flex-col justify-start bg-white p-7 transition-transform duration-300 ease-in-out group-hover:translate-y-0">
               <div className="mb-4 flex items-baseline justify-between gap-4">
                 <h3 className="text-sm font-semibold">{project.name}</h3>
                 <div className="flex shrink-0 gap-4 text-xs font-medium">
@@ -195,9 +195,9 @@ export default function Projects() {
 
               <ul className="space-y-2.5 overflow-y-auto">
                 {project.highlights.map((point, j) => (
-                  <li key={j} className="flex gap-2.5 text-xs leading-relaxed text-gray-600">
+                  <li key={j} className="flex gap-2.5 text-left text-xs leading-relaxed text-gray-600">
                     <span className="mt-0.5 shrink-0 text-gray-300">→</span>
-                    {point}
+                    <span className="flex-1">{point}</span>
                   </li>
                 ))}
               </ul>
