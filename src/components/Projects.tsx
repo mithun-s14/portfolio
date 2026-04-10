@@ -25,7 +25,7 @@ const PROJECTS = [
     summary: 'End-to-end ML pipeline predicting per-game NBA player stats at 75%+ accuracy.',
     highlights: [
       '6 ensemble models covering 500+ active players with automated daily retraining on fresh season data',
-      'GitHub Actions ETL pipeline scraping and normalising 10,000+ player stats daily from Basketball Reference — zero manual intervention',
+      'GitHub Actions ETL pipeline scraping and normalising 10,000+ player stats daily from Basketball Reference with zero manual intervention',
       'MLOps infrastructure on Hugging Face Spaces (16 GB RAM) with CI/CD pipelines serving real-time predictions 24/7',
     ],
     tags: ['Python', 'scikit-learn', 'Flask', 'pytest', 'GitHub Actions'],
@@ -49,7 +49,7 @@ const PROJECTS = [
     index: '04',
     name: 'Smart Recruiter',
     year: '2024',
-    summary: 'AI-powered recruitment platform — 2nd place at the OPS Phenomenal Hackathon.',
+    summary: 'AI-powered recruitment platform. Placed 2nd at the OPS Phenomenal Hackathon.',
     highlights: [
       'Reduced manual screening time by integrating Microsoft\'s Category Classification Model to flag AI-generated job applications.',
       'Delivered a full end-to-end platform within a tight hackathon timeline using Microsoft Power Apps and REST APIs.',
@@ -99,9 +99,20 @@ const PROJECTS = [
   },
 ];
 
+// col-span per card — creates a non-uniform bento rhythm
+const CARD_SPANS = [
+  'md:col-span-2', // 01 — featured wide
+  'md:col-span-1', // 02
+  'md:col-span-1', // 03
+  'md:col-span-1', // 04
+  'md:col-span-1', // 05
+  'md:col-span-1', // 06
+  'md:col-span-2', // 07 — wide closer
+];
+
 function ExternalIcon() {
   return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <path d="M7 7h10v10" /><path d="M7 17 17 7" />
     </svg>
   );
@@ -133,74 +144,63 @@ export default function Projects() {
         <div className="h-px flex-1 bg-gray-200" />
       </div>
 
-      <div>
+      {/* Bento grid — 1px hairline borders via gap + bg trick */}
+      <div className="grid grid-cols-1 gap-px border border-gray-200 bg-gray-200 md:grid-cols-3">
         {PROJECTS.map((project, i) => (
           <div
             key={project.index}
-            className="reveal-item group border-t border-gray-200 py-10 last:border-b"
-            style={{ transitionDelay: `${i * 120}ms` }}
+            className={`${CARD_SPANS[i]} reveal-item group relative min-h-[280px] overflow-hidden bg-white first:min-h-[340px]`}
+            style={{ transitionDelay: `${i * 80}ms` }}
           >
-            <div className="flex flex-col gap-6 sm:flex-row sm:gap-12">
-              {/* Index + year */}
-              <div className="flex flex-row gap-4 sm:w-8 sm:flex-col sm:gap-1">
-                <span className="text-xs font-light text-gray-400">{project.index}</span>
-                <span className="text-xs font-light text-gray-400">{project.year}</span>
-              </div>
 
-              {/* Content */}
-              <div className="flex-1">
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-xl font-semibold transition-opacity group-hover:opacity-60 sm:text-2xl">
-                    {project.name}
-                  </h3>
-                  {/* Links */}
-                  <div className="flex items-center gap-4 text-sm font-medium">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 transition-opacity hover:opacity-60"
-                      >
-                        GitHub <ExternalIcon />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 transition-opacity hover:opacity-60"
-                      >
-                        Live <ExternalIcon />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed">
-                  {project.summary}
-                </p>
-                {project.highlights.length > 0 && (
-                  <ul className="mt-3 max-w-2xl space-y-1.5">
-                    {project.highlights.map((point, j) => (
-                      <li key={j} className="flex gap-2 text-sm leading-relaxed text-gray-600">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <div className="mt-5 flex flex-wrap gap-2">
+            {/* Static card content */}
+            <div className="relative z-10 flex h-full flex-col p-7">
+              {/* Year */}
+              <span className="text-xs font-light tracking-wide text-gray-400">{project.year}</span>
+
+              {/* Push name/summary/tags to bottom */}
+              <div className="mt-auto">
+                <h3 className="text-lg font-semibold leading-snug sm:text-xl">{project.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">{project.summary}</p>
+                <div className="mt-5 flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-600"
+                      className="rounded-full border border-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-500"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
+            </div>
+
+            {/* Slide-up overlay — reveals highlights + links on hover */}
+            <div className="absolute inset-0 z-20 flex translate-y-full flex-col justify-end bg-white p-7 transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+              <div className="mb-4 flex items-baseline justify-between gap-4">
+                <h3 className="text-sm font-semibold">{project.name}</h3>
+                <div className="flex shrink-0 gap-4 text-xs font-medium">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 transition-opacity hover:opacity-50">
+                      GitHub <ExternalIcon />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 transition-opacity hover:opacity-50">
+                      Live <ExternalIcon />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <ul className="space-y-2.5 overflow-y-auto">
+                {project.highlights.map((point, j) => (
+                  <li key={j} className="flex gap-2.5 text-xs leading-relaxed text-gray-600">
+                    <span className="mt-0.5 shrink-0 text-gray-300">→</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
