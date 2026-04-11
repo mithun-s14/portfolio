@@ -116,14 +116,14 @@ const PROJECTS = [
 
 // col-span per card — rows must sum to 3 to avoid gaps
 const CARD_SPANS = [
-  'md:col-span-2', // 01 — row 1: 2+1=3
-  'md:col-span-1', // 02
-  'md:col-span-2', // 03 — row 2: 2+1=3
+  'md:col-span-2', // 01
+  'md:row-span-2', // 02
+  'md:col-span-2', // 03
   'md:col-span-1', // 04
-  'md:col-span-1', // 05 — row 3: 1+1+1=3
+  'md:col-span-2', // 05
   'md:col-span-1', // 06
   'md:col-span-1', // 07
-  'md:col-span-3', // 08 — row 4: full width
+  'md:col-span-1', // 08
 ];
 
 function ExternalIcon() {
