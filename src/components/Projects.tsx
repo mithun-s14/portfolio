@@ -34,6 +34,20 @@ const PROJECTS = [
   },
   {
     index: '03',
+    name: 'SimpleBL',
+    year: '2026',
+    summary: 'AI fitness research assistant that grounds every response in live peer-reviewed PubMed literature.',
+    highlights: [
+      'Built a full-stack research tool that fetches live PubMed abstracts via NCBI E-utilities on every query with no vector DB or cached data so responses always reflect current literature.',
+      'Integrated Groq API (llama-3.3-70b-versatile) to produce structured JSON search results and markdown chat replies, with inline citation pills linking every claim to its primary source.',
+      'Implemented a 340ms inter-request rate limiter to comply with NCBI\'s 3 req/s policy, with graceful degradation ensuring PubMed failures never surface as unhandled errors.',
+    ],
+    tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Groq API', 'PubMed / NCBI', 'Tailwind CSS', 'Vite'],
+    github: 'https://github.com/mithun-s14/SimpleBL',
+    live: '',
+  },
+  {
+    index: '04',
     name: 'VetConnect',
     year: '2025',
     summary: 'School Project: Full-stack veterinary management system connecting pet owners and clinics.',
@@ -46,7 +60,7 @@ const PROJECTS = [
     live: '',
   },
   {
-    index: '04',
+    index: '05',
     name: 'Smart Recruiter',
     year: '2024',
     summary: 'AI-powered recruitment platform. Placed 2nd at the OPS Phenomenal Hackathon.',
@@ -59,7 +73,7 @@ const PROJECTS = [
     live: '',
   },
   {
-    index: '05',
+    index: '06',
     name: 'Olympic Medal Predictor',
     year: '2024',
     summary: 'Linear regression model forecasting Olympic medal counts from 100+ years of historical data.',
@@ -72,7 +86,7 @@ const PROJECTS = [
     live: '',
   },
   {
-    index: '06',
+    index: '07',
     name: 'Soccer League Database System',
     year: '2024',
     summary: 'School Project: Relational database system managing all data for a competitive soccer league.',
@@ -85,7 +99,7 @@ const PROJECTS = [
     live: '',
   },
   {
-    index: '07',
+    index: '08',
     name: 'Java Stock Market System',
     year: '2023',
     summary: 'School Project: OOP stock market simulator with real-time data, built by a team of 6.',
@@ -97,17 +111,19 @@ const PROJECTS = [
     github: '',
     live: '',
   },
+  
 ];
 
-// col-span per card — creates a non-uniform bento rhythm
+// col-span per card — rows must sum to 3 to avoid gaps
 const CARD_SPANS = [
-  'md:col-span-2', // 01 — featured wide
+  'md:col-span-2', // 01 — row 1: 2+1=3
   'md:col-span-1', // 02
-  'md:col-span-1', // 03
+  'md:col-span-2', // 03 — row 2: 2+1=3
   'md:col-span-1', // 04
-  'md:col-span-1', // 05
+  'md:col-span-1', // 05 — row 3: 1+1+1=3
   'md:col-span-1', // 06
-  'md:col-span-2', // 07 — wide closer
+  'md:col-span-1', // 07
+  'md:col-span-3', // 08 — row 4: full width
 ];
 
 function ExternalIcon() {
