@@ -44,7 +44,7 @@ const PROJECTS = [
     ],
     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Groq API', 'PubMed / NCBI', 'Tailwind CSS', 'Vite'],
     github: 'https://github.com/mithun-s14/SimpleBL',
-    live: '',
+    live: 'https://mithun-s14.github.io/SimpleBL/',
   },
   {
     index: '04',
