@@ -17,7 +17,7 @@ const SKILL_CATEGORIES = [
   },
   {
     label: 'Tools & Workflows',
-    skills: ['Git', 'GitHub Actions', 'CI/CD', 'Test-Driven Development', 'Agile Methodologies', 'REST APIs', 'MLOps'],
+    skills: ['Git', 'GitHub Actions', 'Figma', 'CI/CD', 'Test-Driven Development', 'Agile Methodologies', 'REST APIs', 'MLOps'],
   },
   {
     label: 'Testing',

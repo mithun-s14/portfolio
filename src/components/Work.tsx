@@ -29,6 +29,7 @@ const EXPERIENCES = [
       'Shipped 20+ full-stack features across 2 legacy web apps, adding custom JS validation and REST API integrations that standardised data entry and cut downstream processing errors.',
       'Automated SharePoint procurement data sync via cloud REST pipelines, eliminating 8 hrs/week of manual Excel exports and delivering same-day financial records to finance teams.',
       'Built 5 Power BI dashboards tracking budget allocation and expenditure, adopted by 2 financial teams and significantly reducing ad-hoc reporting requests.',
+      'Developed 25+ responsive, reusable front-end components from Figma specifications using custom CSS, partnering with UI/UX designers to translate wireframes into production UI and reducing design-to-dev handoff time by 30%',
       'Established a smoke/unit/regression testing framework achieving 90% coverage, resulting in a 40% drop in production bugs; mentored 4 new hires, cutting ramp-up time by 50%.',
     ],
     tags: ['JavaScript', 'HTML & CSS', 'SQL', 'Power BI', 'REST APIs', 'Azure DevOps'],
