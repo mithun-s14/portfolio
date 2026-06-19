@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, useMemo, useCallback } from 'react';
 
 interface TextPressureProps {
   text?: string;
@@ -64,6 +64,15 @@ const TextPressure: React.FC<TextPressureProps> = ({
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1);
+
+  useLayoutEffect(() => {
+    if (!containerRef.current || !titleRef.current) return;
+    const containerW = containerRef.current.offsetWidth;
+    const textW = titleRef.current.scrollWidth;
+    if (textW > containerW + 2) {
+      setFontSize(prev => Math.floor(prev * (containerW / textW)));
+    }
+  }, [fontSize]);
 
   const chars = text.split('');
 
@@ -173,11 +182,11 @@ const TextPressure: React.FC<TextPressureProps> = ({
   const styleElement = useMemo(() => {
     return (
       <style>{`
-        @font-face {
+        ${fontUrl ? `@font-face {
           font-family: '${fontFamily}';
           src: url('${fontUrl}');
           font-style: normal;
-        }
+        }` : ''}
 
         .flex {
           display: flex;

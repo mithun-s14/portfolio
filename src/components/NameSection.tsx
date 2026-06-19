@@ -30,9 +30,11 @@ export default function NameSection() {
         <div style={{ height: 'calc(100vw / 3)', width: '100%' }}>
           <TextPressure
             text="Mithun"
+            fontFamily="Big Shoulders"
+            fontUrl=""
             flex={true}
             weight={true}
-            width={true}
+            width={false}
             italic={false}
             scale={false}
             textColor="#000000"
@@ -43,9 +45,11 @@ export default function NameSection() {
         <div style={{ height: 'calc(100vw / 8)', width: '100%', minHeight: '40px' }}>
           <TextPressure
             text="Sivapathasundram"
+            fontFamily="Big Shoulders"
+            fontUrl=""
             flex={true}
             weight={true}
-            width={true}
+            width={false}
             italic={false}
             scale={false}
             textColor="#000000"
