@@ -13,11 +13,11 @@ const SKILL_CATEGORIES = [
   },
   {
     label: 'Databases & Cloud',
-    skills: ['PostgreSQL', 'MongoDB', 'Supabase', 'Docker','Azure', 'Hugging Face Spaces', 'Vercel'],
+    skills: ['PostgreSQL', 'MS SQL', 'MongoDB', 'Supabase', 'Docker', 'Kubernetes', 'GKE', 'Azure', 'Hugging Face Spaces', 'Vercel'],
   },
   {
     label: 'Tools & Workflows',
-    skills: ['Git', 'GitHub Actions', 'Figma', 'CI/CD', 'Test-Driven Development', 'Agile Methodologies', 'REST APIs', 'MLOps'],
+    skills: ['Git', 'GitHub Actions', 'Figma', 'CI/CD', 'Test-Driven Development', 'Agile Methodologies', 'REST APIs', 'MLOps', 'PowerBI', 'OutSystems', 'Claude Code', 'GitHub Copilot'],
   },
   {
     label: 'Testing',
