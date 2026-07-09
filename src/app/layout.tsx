@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Big_Shoulders } from "next/font/google";
 import "./globals.css";
+
+const bigShoulders = Big_Shoulders({
+  variable: "--font-big-shoulders",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "variable",
+});
 
 export const metadata: Metadata = {
   title: "Mithun Sivapathasundram",
@@ -17,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden">{children}</body>
+      <body className={`${bigShoulders.variable} overflow-x-hidden`}>{children}</body>
     </html>
   );
 }
