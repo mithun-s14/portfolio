@@ -15,19 +15,12 @@ export default function NameSection() {
 
   return (
     <>
-      {/*
-        paddingTop clears the absolute navbar.
-        The container fills the viewport and centers the name block.
-        scale={false} + overflow:hidden lets each row use vw-based heights
-        that exactly match the uppercase cap height (≈ 0.72 × fontSize),
-        keeping the two names flush with no gap.
-      */}
       <section
         className="flex flex-col justify-center overflow-x-hidden"
         style={{ minHeight: '100vh', paddingTop: '80px', paddingBottom: '60px' }}
       >
-        {/* "MITHUN" — fontSize = vw/3, container matches full em height */}
-        <div style={{ height: 'calc(100vw / 3)', width: '100%' }}>
+        {/* "MITHUN" — fontSize = vw/3, container matches full em height. */}
+        <div style={{ height: 'max(48px, calc(100vw / 3))', width: '100%' }}>
           <TextPressure
             text="Mithun"
             fontFamily="Big Shoulders"
@@ -41,8 +34,8 @@ export default function NameSection() {
             minFontSize={48}
           />
         </div>
-        {/* "SIVAPATHASUNDRAM" — fontSize = vw/8, container matches full em height */}
-        <div style={{ height: 'calc(100vw / 8)', width: '100%', minHeight: '40px' }}>
+        {/* "SIVAPATHASUNDRAM" — fontSize = vw/8, container matches full em height. */}
+        <div style={{ height: 'max(24px, calc(100vw / 8))', width: '100%' }}>
           <TextPressure
             text="Sivapathasundram"
             fontFamily="Big Shoulders"
