@@ -12,7 +12,7 @@ const bigShoulders = Big_Shoulders({
 export const metadata: Metadata = {
   title: "Mithun Sivapathasundram",
   description:
-    "Creative Builder · Software Engineer · Computer Science Student. Code, systems & craft.",
+    "Creative Builder · Software Engineer · Computer Science Graduate. Code, systems & craft.",
   icons: {
     icon: "/me.png",
   },

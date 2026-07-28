@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 
 const WORDS_1 = [
-  'A', 'computer', 'science', 'student', 'with', 'a', 'passion',
+  'A', 'computer', 'science', 'graduate', 'with', 'a', 'passion',
   'for', 'building', 'clean,', 'performant', 'software.',
 ];
 
@@ -67,7 +67,7 @@ export default function About() {
             <p className="mb-1 text-xs font-medium uppercase tracking-[0.15em] text-gray-400">Education</p>
             <p className="font-light">BSc Computer Science @</p>
             <p className="font-light">Toronto Metropolitan University</p>
-            <p className="text-sm font-light text-gray-500">4th Year · 2026</p>
+            <p className="text-sm font-light text-gray-500">Graduated · 2026</p>
           </div>
           <div>
             <p className="mb-1 text-xs font-medium uppercase tracking-[0.15em] text-gray-400">Looking for</p>
