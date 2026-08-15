@@ -40,7 +40,7 @@ const PROJECTS = [
     summary: 'AI fitness research assistant that grounds every response in live peer-reviewed PubMed literature.',
     highlights: [
       'Built a full-stack research tool that fetches live PubMed abstracts via NCBI E-utilities on every query with no vector DB or cached data so responses always reflect current literature.',
-      'Integrated Groq API (llama-3.3-70b-versatile) to produce structured JSON search results and markdown chat replies, with inline citation pills linking every claim to its primary source.',
+      'Integrated Groq API (openai/gpt-oss-120b) to produce structured JSON search results and markdown chat replies, with inline citation pills linking every claim to its primary source.',
       'Implemented a 340ms inter-request rate limiter to comply with NCBI\'s 3 req/s policy, with graceful degradation ensuring PubMed failures never surface as unhandled errors.',
     ],
     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Groq API', 'PubMed / NCBI', 'Tailwind CSS', 'Vite'],
