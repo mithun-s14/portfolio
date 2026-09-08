@@ -94,12 +94,6 @@ export default function Navbar() {
       {/* Mobile / tablet nav — hamburger bubble menu */}
       <div className="lg:hidden">
         <BubbleMenu
-          logo={
-            <a href="#" className="flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-[#111]">
-              <span>©</span>
-              <span>Mithun</span>
-            </a>
-          }
           items={menuItems}
           menuAriaLabel="Toggle navigation"
           menuBg="#ffffff"

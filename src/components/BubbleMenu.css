@@ -273,3 +273,8 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
+
+/* No logo bubble — keep the toggle pinned to the right */
+.bubble-menu > .toggle-bubble:only-child {
+  margin-left: auto;
+}
