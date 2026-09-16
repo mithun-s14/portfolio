@@ -209,6 +209,24 @@ body {
   transform: translateY(0);
 }
 
+/* ─── Section transitions (data-st-01) ─────── */
+/* Opaque bg so the next block covers the parallax hero / the previous one hides the reveal footer */
+.st-root {
+  position: relative;
+}
+.st-root > section,
+.st-root > #footer {
+  position: relative;
+  z-index: 1;
+  background: var(--background);
+}
+.st-root > #footer {
+  background: var(--foreground);
+}
+.st-root > [data-st-01]:not([data-st-01="pin"]) {
+  will-change: transform;
+}
+
 /* ─── About word reveal ──────────────────────── */
 .word-reveal {
   position: relative;

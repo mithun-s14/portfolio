@@ -16,6 +16,10 @@ export default function NameSection() {
   return (
     <>
       <section
+        data-st-01="parallax"
+        data-st-y="300"
+        data-st-opacity="0.6"
+        data-st-overlay="white"
         className="flex flex-col justify-center overflow-x-hidden"
         style={{ minHeight: '100vh', paddingTop: '80px', paddingBottom: '60px' }}
       >

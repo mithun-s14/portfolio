@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import gsap from 'gsap';
+import { sectionTransition01 } from '@/lib/sectionTransition';
 import BlobCursor from '@/components/BlobCursor';
 import Navbar from '@/components/Navbar';
 import NameSection from '@/components/NameSection';
@@ -24,6 +26,12 @@ export default function Home() {
     };
     window.addEventListener('mouseover', onOver);
     return () => window.removeEventListener('mouseover', onOver);
+  }, []);
+
+  /* Section transitions (data-st-01 on hero/footer) */
+  useEffect(() => {
+    const ctx = gsap.context(() => sectionTransition01());
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -52,7 +60,7 @@ export default function Home() {
         aria-hidden
       />
 
-      <div className="flex flex-col bg-background text-foreground">
+      <main className="st-root flex flex-col bg-background text-foreground">
         <Navbar />
         <NameSection />
         <About />
@@ -60,7 +68,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <Footer />
-      </div>
+      </main>
     </>
   );
 }
