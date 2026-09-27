@@ -59,8 +59,8 @@ export default function Footer() {
         </div>
 
         {/* Info row: bio | version/timezone | socials */}
-        <div className="mt-20 flex flex-col justify-between p-5 sm:mx-[100px] sm:mt-48 sm:flex-row" style={{ marginTop: '220px' }}>
-          <p className="mb-5 max-w-xs text-base leading-relaxed">
+        <div className="mt-20 flex flex-col justify-between p-5 sm:mx-[100px] sm:mt-48 sm:flex-row sm:items-end" style={{ marginTop: '220px' }}>
+          <p className="mb-5 max-w-xs p-1 text-base sm:mb-0">
             Full-stack developer | 2026 new grad |
             Passionate about building software that makes an impact.
           </p>
