@@ -112,6 +112,21 @@ body {
 .loading-out {
   animation: loadOut 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.5s forwards;
 }
+/* Curved bottom edge that trails the overlay and flattens as it lifts */
+.loading-out::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -10%;
+  width: 120%;
+  height: 20vh;
+  background: inherit;
+  border-radius: 0 0 50% 50%;
+  animation: curveFlat 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.5s forwards;
+}
+@keyframes curveFlat {
+  to { height: 0; }
+}
 
 /* ─── Hero slide-in ──────────────────────────── */
 @keyframes heroIn {
